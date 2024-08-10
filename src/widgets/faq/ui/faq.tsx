@@ -9,7 +9,7 @@ export const Faq: FC = () => {
   return (
     <section>
       <Container size="sm" className="faq__wrapper">
-        <Title ta="center" className="faq__title">
+        <Title ta="center" mb={20} className="faq__title">
           Frequently Asked Questions
         </Title>
 

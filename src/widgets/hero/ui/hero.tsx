@@ -21,7 +21,7 @@ export const Hero: FC = () => {
             React components and hooks library
           </h1>
 
-          <Text className="hero__description" color="dimmed">
+          <Text mt={20} className="hero__description" color="dimmed">
             Build fully functional accessible web applications with ease –
             Mantine includes more than 100 customizable components and hooks to
             cover you in any situation
