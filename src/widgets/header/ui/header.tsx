@@ -33,9 +33,11 @@ export const Header: FC = () => {
     <header className="header">
       <Container size="md" className="header__inner">
         <MantineLogo size={28} />
-        <Group gap={5} visibleFrom="xs">
-          {items}
-        </Group>
+        <nav>
+          <Group gap={5} visibleFrom="xs">
+            {items}
+          </Group>
+        </nav>
 
         <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
       </Container>
