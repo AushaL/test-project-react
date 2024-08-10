@@ -32,7 +32,9 @@ export const Header: FC = () => {
   return (
     <header className="header">
       <Container size="xl" className="header__inner">
-        <MantineLogo size={28} />
+        <Link to={ROUTES.DEFAULT}>
+          <MantineLogo size={28} />
+        </Link>
         <nav>
           <Group gap={5} visibleFrom="xs">
             {items}
