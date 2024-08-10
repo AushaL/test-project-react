@@ -1,10 +1,12 @@
 import { FC } from "react";
-import { Image, Title, Text } from "@mantine/core";
+import { Image, Text } from "@mantine/core";
+import { MainTitle } from "../../../shared/ui/mainTitle";
+import { MainText } from "../../../shared/ui/mainText";
 import "./productContent.scss";
 
 export const ProductContent: FC = () => {
   return (
-    <div className="product-content">
+    <section className="product-content">
       <Image
         className="product-content__image"
         radius="md"
@@ -13,19 +15,17 @@ export const ProductContent: FC = () => {
       <Text className="product-content__category" fw={700}>
         Bold
       </Text>
-      <Title className="product-content__title">This is h1 title</Title>
+      <MainTitle name="Default text" />
       <Text className="product-content__description" size="lg">
         Large text
       </Text>
-      <Text className="product-content__category" size="md">
-        Default text
-      </Text>
+      <MainText text="text" />
       <Text className="product-content__rating" size="xl">
         Extra large text
       </Text>
       <Text className="product-content__price" fw={500}>
         Semibold
       </Text>
-    </div>
+    </section>
   );
 };
