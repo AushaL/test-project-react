@@ -1,7 +1,13 @@
+import { Providers } from "./providers";
+import { AppRouter } from "./routers";
+import "@mantine/core/styles.css";
+
 function App() {
   return (
     <>
-      <div>App</div>
+      <Providers>
+        <AppRouter />
+      </Providers>
     </>
   );
 }
