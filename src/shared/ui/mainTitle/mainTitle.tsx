@@ -7,5 +7,9 @@ interface IMainTitle {
 }
 
 export const MainTitle: FC<IMainTitle> = ({ name }) => {
-  return <Title className="main-title">{name}</Title>;
+  return (
+    <Title mb={15} className="main-title">
+      {name}
+    </Title>
+  );
 };

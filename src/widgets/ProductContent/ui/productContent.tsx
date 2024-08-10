@@ -7,25 +7,27 @@ import "./productContent.scss";
 export const ProductContent: FC = () => {
   return (
     <section className="product-content">
-      <Image
-        className="product-content__image"
-        radius="md"
-        src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-7.png"
-      />
-      <Text className="product-content__category" fw={700}>
-        Bold
-      </Text>
-      <MainTitle name="Default text" />
-      <Text className="product-content__description" size="lg">
-        Large text
-      </Text>
-      <MainText text="text" />
-      <Text className="product-content__rating" size="xl">
-        Extra large text
-      </Text>
-      <Text className="product-content__price" fw={500}>
-        Semibold
-      </Text>
+      <div className="product-content__wrapper">
+        <Image
+          className="product-content__image"
+          w={800}
+          radius="md"
+          src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-7.png"
+        />
+        <div className="product-content__text-content">
+          <Text c={"#2e2d2d"} mb={5} fw={700}>
+            category
+          </Text>
+          <MainTitle name="Product name" />
+          <MainText text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eaque, eius saepe harum tempore exercitationem voluptate corporis. Dolorem voluptatem voluptates ipsum repudiandae ipsam odit vero! Cum corrupti aspernatur cupiditate aperiam?" />
+          <Text fw={500} mb={5} size="xl">
+            Rating: 3.5
+          </Text>
+          <Text fw={600} size="xl">
+            Price: 120$
+          </Text>
+        </div>
+      </div>
     </section>
   );
 };

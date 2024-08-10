@@ -8,9 +8,9 @@ interface ICardProps {
   price: string;
 }
 
-export const Card: FC<ICardProps> = ({ imageUrl, title, price }) => {
+export const ProductCard: FC<ICardProps> = ({ imageUrl, title, price }) => {
   return (
-    <div className="card">
+    <div className="product-card">
       <AspectRatio ratio={1920 / 1080}>
         <Image src={imageUrl} />
       </AspectRatio>
