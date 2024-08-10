@@ -1,5 +1,13 @@
 import { FC } from "react";
+import { Helmet } from "react-helmet-async";
 
 export const Products: FC = () => {
-  return <div>Products</div>;
+  return (
+    <>
+      <Helmet>
+        <title>Products page</title>
+      </Helmet>
+      <div>Products</div>
+    </>
+  );
 };

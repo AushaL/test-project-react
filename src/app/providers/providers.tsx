@@ -6,6 +6,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "../store";
 import { Fallback } from "../../shared/ui/fallback";
 import { createTheme, MantineProvider } from "@mantine/core";
+import { HelmetProvider } from "react-helmet-async";
 
 interface IProviders {
   readonly children: JSX.Element;
@@ -22,7 +23,9 @@ export const Providers: FC<IProviders> = ({ children }) => {
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <MantineProvider theme={theme}>
-            <BrowserRouter>{children}</BrowserRouter>
+            <HelmetProvider>
+              <BrowserRouter>{children}</BrowserRouter>
+            </HelmetProvider>
           </MantineProvider>
         </PersistGate>
       </Provider>
