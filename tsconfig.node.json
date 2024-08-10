@@ -18,5 +18,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
+  "exclude": ["build", "husky", "public", "node_modules"],
   "include": ["vite.config.ts"]
 }
