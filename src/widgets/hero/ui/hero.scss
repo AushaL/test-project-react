@@ -1,0 +1,43 @@
+.hero {
+  &__wrapper {
+    position: relative;
+    box-sizing: border-box;
+    background-color: light-dark(
+      var(--mantine-color-white),
+      var(--mantine-color-dark-8)
+    );
+  }
+
+  &__inner {
+    position: relative;
+    padding-top: 200px;
+    padding-bottom: 120px;
+  }
+
+  &__title {
+    font-family:
+      Greycliff CF,
+      var(--mantine-font-family);
+    font-size: 62px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0;
+    padding: 0;
+    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+  }
+
+  &__description {
+    margin-top: var(--mantine-spacing-xl);
+    font-size: 24px;
+  }
+
+  &__controls {
+    margin-top: calc(var(--mantine-spacing-xl) * 2);
+  }
+
+  &__control {
+    height: 54px;
+    padding-left: 38px;
+    padding-right: 38px;
+  }
+}
