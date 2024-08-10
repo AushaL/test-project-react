@@ -31,7 +31,7 @@ export const Header: FC = () => {
 
   return (
     <header className="header">
-      <Container size="md" className="header__inner">
+      <Container size="xl" className="header__inner">
         <MantineLogo size={28} />
         <nav>
           <Group gap={5} visibleFrom="xs">
