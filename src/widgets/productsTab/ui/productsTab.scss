@@ -3,4 +3,19 @@
   margin-top: 20px;
   border: 1px solid black;
   border-radius: 10px;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    &:nth-child(1) {
+      margin-right: 30px;
+    }
+
+    &:nth-child(2) {
+      margin-right: auto;
+    }
+  }
 }

@@ -1,7 +1,7 @@
 import { FC } from "react";
-import { Title } from "@mantine/core";
 import { MainInput } from "../../../shared/ui/mainInput";
 import { SelectInput } from "../../../shared/ui/selectInput";
+import { InputLabel } from "../../../shared/ui/inputLabel";
 import "./productsTab.scss";
 
 export const ProductsTab: FC = () => {
@@ -16,12 +16,18 @@ export const ProductsTab: FC = () => {
   return (
     <div className="products-tab">
       <div className="products-tab__wrapper">
-        <Title className="title">Filter</Title>
-        <SelectInput options={filterOptions} />
-        <Title className="title">Sort by</Title>
-        <SelectInput options={sortOptions} />
-        <Title className="title">Search</Title>
-        <MainInput />
+        <div className="products-tab__item">
+          <InputLabel value="Filter" />
+          <SelectInput options={filterOptions} />
+        </div>
+        <div className="products-tab__item">
+          <InputLabel value="Sort by" />
+          <SelectInput options={sortOptions} />
+        </div>
+        <div className="products-tab__item">
+          <InputLabel value="Search" />
+          <MainInput />
+        </div>
       </div>
     </div>
   );

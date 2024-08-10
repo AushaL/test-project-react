@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Image, Text, AspectRatio } from "@mantine/core";
-import "./card.scss";
+import "./productCard.scss";
 
 interface ICardProps {
   imageUrl: string;
@@ -14,10 +14,16 @@ export const ProductCard: FC<ICardProps> = ({ imageUrl, title, price }) => {
       <AspectRatio ratio={1920 / 1080}>
         <Image src={imageUrl} />
       </AspectRatio>
-      <Text className="products-list__title" mt={5}>
+      <Text
+        className="products-list__title"
+        size="md"
+        c={"#000000"}
+        mt={10}
+        mb={5}
+      >
         {title}
       </Text>
-      <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md">
+      <Text size="lg" c={"#000000"} tt="uppercase" fw={700}>
         {price} $
       </Text>
     </div>

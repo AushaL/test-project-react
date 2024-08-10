@@ -1,0 +1,9 @@
+.products-controls {
+  padding-bottom: 40px;
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+}

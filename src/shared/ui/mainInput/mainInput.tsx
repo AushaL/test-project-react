@@ -11,7 +11,6 @@ export const MainInput: FC = () => {
         value={value}
         onChange={(event) => setValue(event.currentTarget.value)}
         rightSectionPointerEvents="all"
-        mt="md"
         rightSection={
           <CloseButton
             aria-label="Clear input"

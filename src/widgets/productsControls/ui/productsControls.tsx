@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { MainButton } from "../../../shared/ui/mainButton";
+import "./productsControls.scss";
 
 export const ProductsControls: FC = () => {
   return (

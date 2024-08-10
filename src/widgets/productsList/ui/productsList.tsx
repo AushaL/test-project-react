@@ -1,8 +1,8 @@
-import { SimpleGrid, Image, Text, Container, AspectRatio } from "@mantine/core";
+import { SimpleGrid, Container } from "@mantine/core";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../../shared/constants/routes";
 import { FC } from "react";
-import { Card } from "@mantine/core";
+import { ProductCard } from "../../../entities/productCard";
 import "./productsList.scss";
 
 const mockdata = [
@@ -10,42 +10,37 @@ const mockdata = [
     title: "Top 10 places to visit in Norway this summer",
     image:
       "https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80",
-    date: "August 18, 2022",
+    price: "120",
   },
   {
     title: "Best forests to visit in North America",
     image:
       "https://images.unsplash.com/photo-1448375240586-882707db888b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80",
-    date: "August 27, 2022",
+    price: "30",
   },
   {
     title: "Hawaii beaches review: better than you think",
     image:
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80",
-    date: "September 9, 2022",
+    price: "20",
   },
   {
     title: "Mountains at night: 12 best locations to enjoy the view",
     image:
       "https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80",
-    date: "September 12, 2022",
+    price: "100",
   },
 ];
 
 export const ProductsList: FC = () => {
   const cards = mockdata.map((article) => (
     <Link to={ROUTES.PRODUCT}>
-      <Card key={article.title} className="products-list__card">
-        <AspectRatio ratio={1920 / 1080}>
-          <Image src={article.image} />
-        </AspectRatio>
-        <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md">
-          {article.date}
-        </Text>
-        <Text className="products-list__title" mt={5}>
-          {article.title}
-        </Text>
-      </Card>
+      <ProductCard
+        key={article.title}
+        imageUrl={article.image}
+        title={article.title}
+        price={article.price}
+      />
     </Link>
   ));
 
