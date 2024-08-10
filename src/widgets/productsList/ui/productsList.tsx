@@ -1,12 +1,8 @@
-import {
-  SimpleGrid,
-  Card,
-  Image,
-  Text,
-  Container,
-  AspectRatio,
-} from "@mantine/core";
+import { SimpleGrid, Image, Text, Container, AspectRatio } from "@mantine/core";
+import { Link } from "react-router-dom";
+import { ROUTES } from "../../../shared/constants/routes";
 import { FC } from "react";
+import { Card } from "@mantine/core";
 import "./productsList.scss";
 
 const mockdata = [
@@ -38,24 +34,19 @@ const mockdata = [
 
 export const ProductsList: FC = () => {
   const cards = mockdata.map((article) => (
-    <Card
-      key={article.title}
-      p="md"
-      radius="md"
-      component="a"
-      href="#"
-      className="products-list__card"
-    >
-      <AspectRatio ratio={1920 / 1080}>
-        <Image src={article.image} />
-      </AspectRatio>
-      <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md">
-        {article.date}
-      </Text>
-      <Text className="products-list__title" mt={5}>
-        {article.title}
-      </Text>
-    </Card>
+    <Link to={ROUTES.PRODUCT}>
+      <Card key={article.title} className="products-list__card">
+        <AspectRatio ratio={1920 / 1080}>
+          <Image src={article.image} />
+        </AspectRatio>
+        <Text c="dimmed" size="xs" tt="uppercase" fw={700} mt="md">
+          {article.date}
+        </Text>
+        <Text className="products-list__title" mt={5}>
+          {article.title}
+        </Text>
+      </Card>
+    </Link>
   ));
 
   return (
