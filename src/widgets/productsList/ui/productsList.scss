@@ -1,0 +1,17 @@
+.products-list {
+  &__card {
+    transition:
+      transform 150ms ease,
+      box-shadow 150ms ease;
+
+    &:hover {
+      transform: scale(1.01);
+      box-shadow: var(--mantine-shadow-md);
+    }
+  }
+
+  &__title {
+    font-family: "Greycliff CF", var(--mantine-font-family);
+    font-weight: bold;
+  }
+}

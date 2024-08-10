@@ -7,45 +7,47 @@ const placeholder =
 
 export const Faq: FC = () => {
   return (
-    <Container size="sm" className="faq__wrapper">
-      <Title ta="center" className="faq__title">
-        Frequently Asked Questions
-      </Title>
+    <section>
+      <Container size="sm" className="faq__wrapper">
+        <Title ta="center" className="faq__title">
+          Frequently Asked Questions
+        </Title>
 
-      <Accordion variant="separated">
-        <Accordion.Item className="faq__items" value="reset-password">
-          <Accordion.Control>How can I reset my password?</Accordion.Control>
-          <Accordion.Panel>{placeholder}</Accordion.Panel>
-        </Accordion.Item>
+        <Accordion variant="separated">
+          <Accordion.Item className="faq__items" value="reset-password">
+            <Accordion.Control>How can I reset my password?</Accordion.Control>
+            <Accordion.Panel>{placeholder}</Accordion.Panel>
+          </Accordion.Item>
 
-        <Accordion.Item className="faq__item" value="another-account">
-          <Accordion.Control>
-            Can I create more that one account?
-          </Accordion.Control>
-          <Accordion.Panel>{placeholder}</Accordion.Panel>
-        </Accordion.Item>
+          <Accordion.Item className="faq__item" value="another-account">
+            <Accordion.Control>
+              Can I create more that one account?
+            </Accordion.Control>
+            <Accordion.Panel>{placeholder}</Accordion.Panel>
+          </Accordion.Item>
 
-        <Accordion.Item className="faq__item" value="newsletter">
-          <Accordion.Control>
-            How can I subscribe to monthly newsletter?
-          </Accordion.Control>
-          <Accordion.Panel>{placeholder}</Accordion.Panel>
-        </Accordion.Item>
+          <Accordion.Item className="faq__item" value="newsletter">
+            <Accordion.Control>
+              How can I subscribe to monthly newsletter?
+            </Accordion.Control>
+            <Accordion.Panel>{placeholder}</Accordion.Panel>
+          </Accordion.Item>
 
-        <Accordion.Item className="faq__item" value="credit-card">
-          <Accordion.Control>
-            Do you store credit card information securely?
-          </Accordion.Control>
-          <Accordion.Panel>{placeholder}</Accordion.Panel>
-        </Accordion.Item>
+          <Accordion.Item className="faq__item" value="credit-card">
+            <Accordion.Control>
+              Do you store credit card information securely?
+            </Accordion.Control>
+            <Accordion.Panel>{placeholder}</Accordion.Panel>
+          </Accordion.Item>
 
-        <Accordion.Item className="faq__item" value="payment">
-          <Accordion.Control>
-            What payment systems to you work with?
-          </Accordion.Control>
-          <Accordion.Panel>{placeholder}</Accordion.Panel>
-        </Accordion.Item>
-      </Accordion>
-    </Container>
+          <Accordion.Item className="faq__item" value="payment">
+            <Accordion.Control>
+              What payment systems to you work with?
+            </Accordion.Control>
+            <Accordion.Panel>{placeholder}</Accordion.Panel>
+          </Accordion.Item>
+        </Accordion>
+      </Container>
+    </section>
   );
 };

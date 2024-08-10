@@ -1,5 +1,8 @@
 import { FC } from "react";
 import { Helmet } from "react-helmet-async";
+import { ProductsList } from "../../../widgets/productsList/ui/productsList";
+import { ProductsTab } from "../../../widgets/productsTab";
+import { ProductsControls } from "../../../widgets/productsControls";
 
 export const Products: FC = () => {
   return (
@@ -7,7 +10,11 @@ export const Products: FC = () => {
       <Helmet>
         <title>Products page</title>
       </Helmet>
-      <div>Products</div>
+      <div>
+        <ProductsTab />
+        <ProductsList />
+        <ProductsControls />
+      </div>
     </>
   );
 };
