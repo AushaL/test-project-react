@@ -3,7 +3,7 @@ import { Title } from "@mantine/core";
 import "./mainTitle.scss";
 
 interface IMainTitle {
-  name: string;
+  name: string | undefined;
 }
 
 export const MainTitle: FC<IMainTitle> = ({ name }) => {

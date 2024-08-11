@@ -1,6 +1,5 @@
 import { FC } from "react";
-import { Container, Text, Button, Group } from "@mantine/core";
-import { GithubIcon } from "@mantinex/dev-icons";
+import { Container, Text } from "@mantine/core";
 import "./hero.scss";
 
 export const Hero: FC = () => {
@@ -26,28 +25,6 @@ export const Hero: FC = () => {
             Mantine includes more than 100 customizable components and hooks to
             cover you in any situation
           </Text>
-
-          <Group className="hero__controls">
-            <Button
-              size="xl"
-              className="hero__control"
-              variant="gradient"
-              gradient={{ from: "blue", to: "cyan" }}
-            >
-              Get started
-            </Button>
-
-            <Button
-              component="a"
-              href="https://github.com/mantinedev/mantine"
-              size="xl"
-              variant="default"
-              className="hero__control"
-              leftSection={<GithubIcon size={20} />}
-            >
-              GitHub
-            </Button>
-          </Group>
         </Container>
       </div>
     </section>

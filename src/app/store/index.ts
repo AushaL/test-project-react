@@ -18,17 +18,21 @@ import {
 
 import storage from "redux-persist/lib/storage";
 
+import { productsReducer } from "../../entities/products/model";
+
 const persistConfig = {
   key: "root",
   storage,
   whitelist: [],
 };
 
-export const rootReducer = combineReducers({});
+const rootReducer = combineReducers({
+  products: productsReducer,
+});
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-export const store = configureStore({
+const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
@@ -48,3 +52,5 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   unknown,
   Action<string>
 >;
+
+export default store;

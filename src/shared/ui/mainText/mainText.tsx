@@ -3,7 +3,7 @@ import { Text } from "@mantine/core";
 import "./mainText.scss";
 
 interface IMainText {
-  text: string;
+  text: string | undefined;
 }
 
 export const MainText: FC<IMainText> = ({ text }) => {

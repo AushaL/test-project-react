@@ -1,30 +1,46 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 import { Image, Text } from "@mantine/core";
 import { MainTitle } from "../../../shared/ui/mainTitle";
 import { MainText } from "../../../shared/ui/mainText";
 import "./productContent.scss";
+import { IProduct } from "../../../shared/constants/interfaces";
 
 export const ProductContent: FC = () => {
+  const { id } = useParams();
+  const [product, setProduct] = useState<IProduct | null>(null);
+
+  useEffect(() => {
+    async function fetchProduct() {
+      const { data } = await axios.get(
+        `https://fakestoreapi.com/products/${id}`
+      );
+      setProduct(data);
+    }
+    fetchProduct();
+  }, []);
+
   return (
     <section className="product-content">
       <div className="product-content__wrapper">
         <Image
           className="product-content__image"
-          w={800}
+          w={500}
           radius="md"
-          src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-7.png"
+          src={product?.image}
         />
         <div className="product-content__text-content">
           <Text c={"#2e2d2d"} mb={5} fw={700}>
-            category
+            {product?.category}
           </Text>
-          <MainTitle name="Product name" />
-          <MainText text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid eaque, eius saepe harum tempore exercitationem voluptate corporis. Dolorem voluptatem voluptates ipsum repudiandae ipsam odit vero! Cum corrupti aspernatur cupiditate aperiam?" />
+          <MainTitle name={product?.title} />
+          <MainText text={product?.description} />
           <Text fw={500} mb={5} size="xl">
-            Rating: 3.5
+            Rating: {product?.rating.rate}
           </Text>
           <Text fw={600} size="xl">
-            Price: 120$
+            Price: {product?.price}$
           </Text>
         </div>
       </div>

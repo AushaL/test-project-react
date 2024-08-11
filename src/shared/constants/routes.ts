@@ -3,5 +3,5 @@ export enum ROUTES {
   DEFAULT = "/",
   HOME = "",
   PRODUCTS = "/products",
-  PRODUCT = "/product/:id",
+  PRODUCT = "/products/:id",
 }

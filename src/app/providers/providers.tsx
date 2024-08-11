@@ -3,7 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { ErrorBoundary } from "react-error-boundary";
 import { PersistGate } from "redux-persist/integration/react";
-import { store, persistor } from "../store";
+import store, { persistor } from "../store";
 import { Fallback } from "../../shared/ui/fallback";
 import { createTheme, MantineProvider } from "@mantine/core";
 import { HelmetProvider } from "react-helmet-async";
