@@ -20,9 +20,8 @@ export const ProductsList: FC = () => {
   return (
     <Container py="xl">
       <SimpleGrid cols={{ base: 1, sm: 2 }}>
-        {/* {filteredProducts} */}
         {items?.map((item) => (
-          <Link to={ROUTES.PRODUCT} key={item.id}>
+          <Link to={`${ROUTES.PRODUCTS}/${item.id}`} key={item.id}>
             <ProductCard
               imageUrl={item.image}
               title={item.title}
