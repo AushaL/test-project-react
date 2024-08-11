@@ -1,24 +1,33 @@
-import { FC, useEffect, useState } from "react";
-import axios from "axios";
+import { FC, useEffect } from "react";
+// import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Image, Text } from "@mantine/core";
 import { MainTitle } from "../../../shared/ui/mainTitle";
 import { MainText } from "../../../shared/ui/mainText";
 import "./productContent.scss";
-import { IProduct } from "../../../shared/constants/interfaces";
+// import { IProduct } from "../../../shared/constants/interfaces";
+import { useAppDispatch, useAppSelector } from "../../../app/store/hooks";
+import { fetchFullProduct } from "../../../entities/productCard/model";
+import { RootState } from "../../../app/store";
 
 export const ProductContent: FC = () => {
+  const dispatch = useAppDispatch();
+  const product = useAppSelector((state: RootState) => state.product.item);
   const { id } = useParams();
-  const [product, setProduct] = useState<IProduct | null>(null);
+  // const [product, setProduct] = useState<IProduct | null>(null);
+
+  // useEffect(() => {
+  //   async function fetchProduct() {
+  //     const { data } = await axios.get(
+  //       `https://fakestoreapi.com/products/${id}`
+  //     );
+  //     setProduct(data);
+  //   }
+  //   fetchProduct();
+  // }, []);
 
   useEffect(() => {
-    async function fetchProduct() {
-      const { data } = await axios.get(
-        `https://fakestoreapi.com/products/${id}`
-      );
-      setProduct(data);
-    }
-    fetchProduct();
+    dispatch(fetchFullProduct(id));
   }, []);
 
   return (
