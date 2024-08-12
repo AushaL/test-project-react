@@ -11,8 +11,8 @@ export const GET_PRODUCTS_LIST = "/GET_PRODUCTS_LIST";
 
 export const fetchProductsList = createAsyncThunk(
   GET_PRODUCTS_LIST,
-  async () => {
-    const response = await getProducts();
+  async (sortValue: string) => {
+    const response = await getProducts(sortValue);
     return response;
   }
 );

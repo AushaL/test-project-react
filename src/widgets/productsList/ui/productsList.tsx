@@ -8,9 +8,11 @@ import { useAppDispatch, useAppSelector } from "../../../app/store/hooks";
 import { fetchProductsList } from "../../../entities/products/model/products.actions";
 import { RootState } from "../../../app/store";
 import { selectSearchValue } from "../../../entities/search/model/search.selectors";
+import { selectSortValue } from "../../../entities/sort/model/sort.selectors";
 
 export const ProductsList: FC = () => {
   const dispatch = useAppDispatch();
+  const sortValue = useAppSelector(selectSortValue);
   const searchValue = useAppSelector(selectSearchValue);
 
   const items = useAppSelector((state: RootState) => state.products.items);
@@ -36,8 +38,8 @@ export const ProductsList: FC = () => {
     });
 
   useEffect(() => {
-    dispatch(fetchProductsList());
-  }, []);
+    dispatch(fetchProductsList(sortValue));
+  }, [sortValue]);
 
   return (
     <Container py="xl">

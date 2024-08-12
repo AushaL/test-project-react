@@ -1,5 +1,5 @@
 import axiosInstance from "../base";
 
-export const getProducts = () => {
-  return axiosInstance.get(`products/`);
+export const getProducts = (sortValue: string) => {
+  return axiosInstance.get(`products/?sort=${sortValue}`);
 };
