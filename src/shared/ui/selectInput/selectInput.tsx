@@ -12,7 +12,10 @@ export const SelectInput: FC<ISelectInputProps> = ({ options }) => {
   return (
     <NativeSelect
       value={value}
-      onChange={(event) => setValue(event.currentTarget.value)}
+      onChange={(event) => {
+        setValue(event.currentTarget.value);
+        onChange(value);
+      }}
       data={options}
     />
   );

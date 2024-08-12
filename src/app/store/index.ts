@@ -20,6 +20,7 @@ import storage from "redux-persist/lib/storage";
 
 import { productsReducer } from "../../entities/products/model";
 import { productReducer } from "../../entities/productCard/model";
+import { searchReducer } from "../../entities/search/model";
 
 const persistConfig = {
   key: "root",
@@ -30,6 +31,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   products: productsReducer,
   product: productReducer,
+  search: searchReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
