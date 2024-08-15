@@ -18,7 +18,7 @@ export const SelectInput: FC<ISelectInputProps> = ({
       value={value}
       onChange={(event) => {
         setValue(event.currentTarget.value);
-        onSelectInput(value);
+        onSelectInput(event.currentTarget.value);
       }}
       data={options}
     />

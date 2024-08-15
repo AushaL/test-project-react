@@ -4,22 +4,21 @@ import { SelectInput } from "../../../shared/ui/selectInput";
 import { InputLabel } from "../../../shared/ui/inputLabel";
 import debounce from "lodash.debounce";
 import "./productsTab.scss";
-import { useAppDispatch, useAppSelector } from "../../../app/store/hooks";
+import { useAppDispatch } from "../../../app/store/hooks";
 import { setSearchValue } from "../../../entities/search/model/search.reducer";
-// import { selectSortValue } from "../../../entities/sort/model/sort.selectors";
 import { setSortValue } from "../../../entities/sort/model/sort.reducer";
+import { setFilterValue } from "../../../entities/filter/model/filter.reducer";
 
 export const ProductsTab: FC = () => {
   const dispatch = useAppDispatch();
   const sortOptions = ["sort by desc", "sort by asc"];
-  // const filterOptions = [
-  //   "men's clothing",
-  //   "women's clothing",
-  //   "jewelery",
-  //   "electronics",
-  // ];
-
-  // const currentSortValue = useAppSelector(selectSortValue);
+  const filterOptions = [
+    "all",
+    "men's clothing",
+    "women's clothing",
+    "jewelery",
+    "electronics",
+  ];
 
   const onClickClear = () => {
     dispatch(setSearchValue(""));
@@ -36,6 +35,14 @@ export const ProductsTab: FC = () => {
     updateSearchValue(value);
   };
 
+  const updateFilterValue = (value: string) => {
+    dispatch(setFilterValue(value.toLowerCase()));
+  };
+
+  const onChangeFilterSelect = (value: string) => {
+    updateFilterValue(value);
+  };
+
   const updateSortValue = (value: string) => {
     if (value === "sort by asc") {
       dispatch(setSortValue("asc"));
@@ -44,22 +51,25 @@ export const ProductsTab: FC = () => {
     }
   };
 
-  const onChandeSortSelect = (value: string) => {
+  const onChangeSortSelect = (value: string) => {
     updateSortValue(value);
   };
 
   return (
     <div className="products-tab">
       <div className="products-tab__wrapper">
-        {/* <div className="products-tab__item">
+        <div className="products-tab__item">
           <InputLabel value="Filter" />
-          <SelectInput options={filterOptions}  onSelectInput={('') => {}} />
-        </div> */}
+          <SelectInput
+            options={filterOptions}
+            onSelectInput={onChangeFilterSelect}
+          />
+        </div>
         <div className="products-tab__item">
           <InputLabel value="Sort by" />
           <SelectInput
             options={sortOptions}
-            onSelectInput={onChandeSortSelect}
+            onSelectInput={onChangeSortSelect}
           />
         </div>
         <div className="products-tab__item">

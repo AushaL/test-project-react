@@ -22,6 +22,7 @@ import { productsReducer } from "../../entities/products/model";
 import { productReducer } from "../../entities/productCard/model";
 import { searchReducer } from "../../entities/search/model";
 import { sortReducer } from "../../entities/sort/model";
+import { filterReducer } from "../../entities/filter/model";
 
 const persistConfig = {
   key: "root",
@@ -34,6 +35,7 @@ const rootReducer = combineReducers({
   product: productReducer,
   search: searchReducer,
   sort: sortReducer,
+  filter: filterReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
